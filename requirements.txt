@@ -1,0 +1,4 @@
+ezodf==0.3.2
+nltk==3.2.1
+pandas>=0.18.1
+seaborn==0.7.1
