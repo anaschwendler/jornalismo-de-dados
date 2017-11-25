@@ -94,13 +94,13 @@
 # 
 # **4 - Stemming e Lematização**
 
-# In[ ]:
+# In[1]:
 
 
 import nltk
 
 
-# In[ ]:
+# In[2]:
 
 
 # Leitura do Sample
@@ -120,7 +120,7 @@ print(dataset)
 
 # #### Tokenização de sentenças
 
-# In[ ]:
+# In[3]:
 
 
 from nltk.tokenize import sent_tokenize
@@ -129,7 +129,7 @@ sentence_tokenized = sent_tokenize(dataset)
 print(sentence_tokenized)
 
 
-# In[ ]:
+# In[4]:
 
 
 len(sentence_tokenized)
@@ -137,7 +137,7 @@ len(sentence_tokenized)
 
 # ### Normalização de texto
 
-# In[ ]:
+# In[5]:
 
 
 import unicodedata 
@@ -152,7 +152,7 @@ print(normalize_string(sentence_tokenized[0]))
 
 # #### Tokenização em Português
 
-# In[ ]:
+# In[6]:
 
 
 import nltk.data
@@ -164,7 +164,7 @@ portuguese_tokenizer.tokenize(dataset)
 # 
 # Para a primeira sentença do texto.
 
-# In[ ]:
+# In[7]:
 
 
 from nltk.tokenize import word_tokenize
@@ -177,7 +177,7 @@ print(first_sentence_word_tokenized)
 # 
 # Para pegar apenas palavras em um texto.
 
-# In[ ]:
+# In[8]:
 
 
 from nltk.tokenize import RegexpTokenizer
@@ -191,7 +191,7 @@ print(first_sentence_word_tokenized_without_punctuation)
 # 
 # Stopwords são palavras que geralmente não contribuem para o significado de uma sentença.
 
-# In[ ]:
+# In[9]:
 
 
 from nltk.corpus import stopwords
@@ -207,7 +207,7 @@ print(words_without_stop)
 # 
 # Stemming é a técnica que remove os afixos das palavras, deixando apenas seu radical, existe uma versão em Português que é `RSLPStemmer`
 
-# In[ ]:
+# In[10]:
 
 
 from nltk.stem import RSLPStemmer
@@ -219,7 +219,7 @@ print(stem_acidente)
 
 # ## Referências
 # * [1]: http://www.nltk.org/
-# * [2]: https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff* 
+# * [2]: https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff
 # * [3]: https://github.com/generonumero/tse_candidatos_2016/blob/master/GN_receitas_candidatos_2016.ipynb
 # * [4]: https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb
 # * [5]: https://anaconda.org/
@@ -228,6 +228,7 @@ print(stem_acidente)
 # * [8]: http://www.numpy.org/
 # * [9]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 # * [10]: https://scrapy.org/
+# * [11]: https://scrapinghub.com/portia
 # 
 # 
 # Livro: https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf

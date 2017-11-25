@@ -11866,7 +11866,7 @@ Para isso, são necessárias ferramentas que permitam análise da linguagem como
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
@@ -11879,7 +11879,7 @@ Para isso, são necessárias ferramentas que permitam análise da linguagem como
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Leitura do Sample</span>
@@ -11891,6 +11891,33 @@ Para isso, são necessárias ferramentas que permitam análise da linguagem como
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Um acidente aéreo na localidade de Bukavu, no leste da República Democrática do Congo, matou 17 pessoas na quinta-feira à tarde, informou hoje um porta-voz das Nações Unidas.
+
+As vítimas do acidente foram 14 passageiros e três membros da tripulação. Todos morreram quando o avião, prejudicado pelo mau tempo, não conseguiu chegar à pista de aterrissagem e caiu numa floresta a 15 Km do aeroporto de Bukavu.
+
+O avião explodiu e se incendiou, acrescentou o porta-voz da ONU em Kinshasa, Jean-Tobias Okala. &#34;Não houve sobreviventes&#34;, disse Okala.
+
+O porta-voz informou que o avião, um Soviet Antonov-28 de fabricação ucraniana e propriedade de uma companhia congolesa, a Trasept Congo, também levava uma carga de minerais.
+
+Segundo fontes aeroportuárias, os membros da tripulação eram de nacionalidade russa. 
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11916,7 +11943,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">sent_tokenize</span>
@@ -11929,16 +11956,54 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Um acidente aéreo na localidade de Bukavu, no leste da República Democrática do Congo, matou 17 pessoas na quinta-feira à tarde, informou hoje um porta-voz das Nações Unidas.&#39;, &#39;As vítimas do acidente foram 14 passageiros e três membros da tripulação.&#39;, &#39;Todos morreram quando o avião, prejudicado pelo mau tempo, não conseguiu chegar à pista de aterrissagem e caiu numa floresta a 15 Km do aeroporto de Bukavu.&#39;, &#39;O avião explodiu e se incendiou, acrescentou o porta-voz da ONU em Kinshasa, Jean-Tobias Okala.&#39;, &#39;&#34;Não houve sobreviventes&#34;, disse Okala.&#39;, &#39;O porta-voz informou que o avião, um Soviet Antonov-28 de fabricação ucraniana e propriedade de uma companhia congolesa, a Trasept Congo, também levava uma carga de minerais.&#39;, &#39;Segundo fontes aeroportuárias, os membros da tripulação eram de nacionalidade russa.&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">)</span>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[4]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -11953,7 +12018,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">unicodedata</span> 
@@ -11970,6 +12035,24 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>um acidente aereo na localidade de bukavu, no leste da republica democratica do congo, matou 17 pessoas na quinta-feira a tarde, informou hoje um porta-voz das nacoes unidas.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11981,7 +12064,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.data</span>
@@ -11990,6 +12073,32 @@ uma sentença é um token em um paragrafo.</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Um acidente aéreo na localidade de Bukavu, no leste da República Democrática do Congo, matou 17 pessoas na quinta-feira à tarde, informou hoje um porta-voz das Nações Unidas.&#39;,
+ &#39;As vítimas do acidente foram 14 passageiros e três membros da tripulação.&#39;,
+ &#39;Todos morreram quando o avião, prejudicado pelo mau tempo, não conseguiu chegar à pista de aterrissagem e caiu numa floresta a 15 Km do aeroporto de Bukavu.&#39;,
+ &#39;O avião explodiu e se incendiou, acrescentou o porta-voz da ONU em Kinshasa, Jean-Tobias Okala.&#39;,
+ &#39;&#34;Não houve sobreviventes&#34;, disse Okala.&#39;,
+ &#39;O porta-voz informou que o avião, um Soviet Antonov-28 de fabricação ucraniana e propriedade de uma companhia congolesa, a Trasept Congo, também levava uma carga de minerais.&#39;,
+ &#39;Segundo fontes aeroportuárias, os membros da tripulação eram de nacionalidade russa.&#39;]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -12005,7 +12114,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">word_tokenize</span>
@@ -12015,6 +12124,24 @@ uma sentença é um token em um paragrafo.</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Um&#39;, &#39;acidente&#39;, &#39;aéreo&#39;, &#39;na&#39;, &#39;localidade&#39;, &#39;de&#39;, &#39;Bukavu&#39;, &#39;,&#39;, &#39;no&#39;, &#39;leste&#39;, &#39;da&#39;, &#39;República&#39;, &#39;Democrática&#39;, &#39;do&#39;, &#39;Congo&#39;, &#39;,&#39;, &#39;matou&#39;, &#39;17&#39;, &#39;pessoas&#39;, &#39;na&#39;, &#39;quinta-feira&#39;, &#39;à&#39;, &#39;tarde&#39;, &#39;,&#39;, &#39;informou&#39;, &#39;hoje&#39;, &#39;um&#39;, &#39;porta-voz&#39;, &#39;das&#39;, &#39;Nações&#39;, &#39;Unidas&#39;, &#39;.&#39;]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12030,7 +12157,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">RegexpTokenizer</span>
@@ -12041,6 +12168,24 @@ uma sentença é um token em um paragrafo.</p>
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Um&#39;, &#39;acidente&#39;, &#39;aéreo&#39;, &#39;na&#39;, &#39;localidade&#39;, &#39;de&#39;, &#39;Bukavu&#39;, &#39;no&#39;, &#39;leste&#39;, &#39;da&#39;, &#39;República&#39;, &#39;Democrática&#39;, &#39;do&#39;, &#39;Congo&#39;, &#39;matou&#39;, &#39;17&#39;, &#39;pessoas&#39;, &#39;na&#39;, &#39;quinta&#39;, &#39;feira&#39;, &#39;à&#39;, &#39;tarde&#39;, &#39;informou&#39;, &#39;hoje&#39;, &#39;um&#39;, &#39;porta&#39;, &#39;voz&#39;, &#39;das&#39;, &#39;Nações&#39;, &#39;Unidas&#39;]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12056,7 +12201,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
@@ -12072,6 +12217,24 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Um&#39;, &#39;acidente&#39;, &#39;aéreo&#39;, &#39;localidade&#39;, &#39;Bukavu&#39;, &#39;leste&#39;, &#39;República&#39;, &#39;Democrática&#39;, &#39;Congo&#39;, &#39;matou&#39;, &#39;17&#39;, &#39;pessoas&#39;, &#39;quinta&#39;, &#39;feira&#39;, &#39;tarde&#39;, &#39;informou&#39;, &#39;hoje&#39;, &#39;porta&#39;, &#39;voz&#39;, &#39;Nações&#39;, &#39;Unidas&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12084,7 +12247,7 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="k">import</span> <span class="n">RSLPStemmer</span>
@@ -12098,6 +12261,24 @@ uma sentença é um token em um paragrafo.</p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>acid
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12105,7 +12286,7 @@ uma sentença é um token em um paragrafo.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Refer&#234;ncias">Refer&#234;ncias<a class="anchor-link" href="#Refer&#234;ncias">&#182;</a></h2><ul>
 <li>[1]: <a href="http://www.nltk.org/">http://www.nltk.org/</a></li>
-<li>[2]: <a href="https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff*">https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff*</a> </li>
+<li>[2]: <a href="https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff">https://medium.com/botsbrasil/o-que-%C3%A9-o-processamento-de-linguagem-natural-49ece9371cff</a></li>
 <li>[3]: <a href="https://github.com/generonumero/tse_candidatos_2016/blob/master/GN_receitas_candidatos_2016.ipynb">https://github.com/generonumero/tse_candidatos_2016/blob/master/GN_receitas_candidatos_2016.ipynb</a></li>
 <li>[4]: <a href="https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb">https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb</a></li>
 <li>[5]: <a href="https://anaconda.org/">https://anaconda.org/</a></li>
@@ -12114,6 +12295,7 @@ uma sentença é um token em um paragrafo.</p>
 <li>[8]: <a href="http://www.numpy.org/">http://www.numpy.org/</a></li>
 <li>[9]: <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></li>
 <li>[10]: <a href="https://scrapy.org/">https://scrapy.org/</a></li>
+<li>[11]: <a href="https://scrapinghub.com/portia">https://scrapinghub.com/portia</a></li>
 </ul>
 <p>Livro: <a href="https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf">https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf</a></p>
 <p>WordCloud: <a href="https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb">https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb</a></p>
