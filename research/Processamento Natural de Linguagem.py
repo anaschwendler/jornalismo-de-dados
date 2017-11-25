@@ -84,6 +84,7 @@
 
 # ## Como análisar usando PLN
 # 
+# Base de dados utilizada: [CSTCorpus](http://nilc.icmc.usp.br/CSTNews/login/about)
 # 
 # **1 - Normalização de Strings**
 # 
@@ -92,6 +93,129 @@
 # **3 - Wordcloud**
 # 
 # **4 - Stemming e Lematização**
+
+# In[ ]:
+
+
+import nltk
+
+
+# In[ ]:
+
+
+# Leitura do Sample
+
+f = open('../data/sample.txt')
+dataset = f.read()
+
+print(dataset)
+
+
+# ### Tokenização em sentenças, palavras e expressão regulares
+# 
+# Token é um pedaço de um todo, então:
+# 
+# uma palavra é um token em uma sentença;
+# uma sentença é um token em um paragrafo.
+
+# #### Tokenização de sentenças
+
+# In[ ]:
+
+
+from nltk.tokenize import sent_tokenize
+
+sentence_tokenized = sent_tokenize(dataset)
+print(sentence_tokenized)
+
+
+# In[ ]:
+
+
+len(sentence_tokenized)
+
+
+# ### Normalização de texto
+
+# In[ ]:
+
+
+import unicodedata 
+
+def normalize_string(string):
+    if isinstance(string, str):
+        nfkd_form = unicodedata.normalize('NFKD', string.lower())
+        return nfkd_form.encode('ASCII', 'ignore').decode('utf-8')
+    
+print(normalize_string(sentence_tokenized[0]))
+
+
+# #### Tokenização em Português
+
+# In[ ]:
+
+
+import nltk.data
+portuguese_tokenizer = nltk.data.load('tokenizers/punkt/PY3/portuguese.pickle')
+portuguese_tokenizer.tokenize(dataset)
+
+
+# #### Tokenização em palavras 
+# 
+# Para a primeira sentença do texto.
+
+# In[ ]:
+
+
+from nltk.tokenize import word_tokenize
+
+first_sentence_word_tokenized = word_tokenize(sentence_tokenized[0])
+print(first_sentence_word_tokenized)
+
+
+# #### Tokenização com expressão regular
+# 
+# Para pegar apenas palavras em um texto.
+
+# In[ ]:
+
+
+from nltk.tokenize import RegexpTokenizer
+tokenizer = RegexpTokenizer("[\w']+")
+
+first_sentence_word_tokenized_without_punctuation = tokenizer.tokenize(sentence_tokenized[0])
+print(first_sentence_word_tokenized_without_punctuation)
+
+
+# ### Filtrando stopwords!
+# 
+# Stopwords são palavras que geralmente não contribuem para o significado de uma sentença.
+
+# In[ ]:
+
+
+from nltk.corpus import stopwords
+
+portuguese_stops = set(stopwords.words('portuguese'))
+words = first_sentence_word_tokenized_without_punctuation
+
+words_without_stop = [word for word in words if word not in portuguese_stops]
+print(words_without_stop)
+
+
+# ### Stemming
+# 
+# Stemming é a técnica que remove os afixos das palavras, deixando apenas seu radical, existe uma versão em Português que é `RSLPStemmer`
+
+# In[ ]:
+
+
+from nltk.stem import RSLPStemmer
+
+stemmer = RSLPStemmer()
+stem_acidente = stemmer.stem(words_without_stop[1]) #acidente
+print(stem_acidente)
+
 
 # ## Referências
 # * [1]: http://www.nltk.org/
@@ -104,3 +228,8 @@
 # * [8]: http://www.numpy.org/
 # * [9]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 # * [10]: https://scrapy.org/
+# 
+# 
+# Livro: https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf
+# 
+# WordCloud: https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb

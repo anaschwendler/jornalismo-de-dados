@@ -11855,13 +11855,249 @@ Para isso, são necessárias ferramentas que permitam análise da linguagem como
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Como-an&#225;lisar-usando-PLN">Como an&#225;lisar usando PLN<a class="anchor-link" href="#Como-an&#225;lisar-usando-PLN">&#182;</a></h2><p><strong>1 - Normalização de Strings</strong></p>
+<h2 id="Como-an&#225;lisar-usando-PLN">Como an&#225;lisar usando PLN<a class="anchor-link" href="#Como-an&#225;lisar-usando-PLN">&#182;</a></h2><p>Base de dados utilizada: <a href="http://nilc.icmc.usp.br/CSTNews/login/about">CSTCorpus</a></p>
+<p><strong>1 - Normalização de Strings</strong></p>
 <p><strong>2 - Remoção de Stopwords</strong></p>
 <p><strong>3 - Wordcloud</strong></p>
 <p><strong>4 - Stemming e Lematização</strong></p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Leitura do Sample</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/sample.txt&#39;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tokeniza&#231;&#227;o-em-senten&#231;as,-palavras-e-express&#227;o-regulares">Tokeniza&#231;&#227;o em senten&#231;as, palavras e express&#227;o regulares<a class="anchor-link" href="#Tokeniza&#231;&#227;o-em-senten&#231;as,-palavras-e-express&#227;o-regulares">&#182;</a></h3><p>Token é um pedaço de um todo, então:</p>
+<p>uma palavra é um token em uma sentença;
+uma sentença é um token em um paragrafo.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tokeniza&#231;&#227;o-de-senten&#231;as">Tokeniza&#231;&#227;o de senten&#231;as<a class="anchor-link" href="#Tokeniza&#231;&#227;o-de-senten&#231;as">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">sent_tokenize</span>
+
+<span class="n">sentence_tokenized</span> <span class="o">=</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Normaliza&#231;&#227;o-de-texto">Normaliza&#231;&#227;o de texto<a class="anchor-link" href="#Normaliza&#231;&#227;o-de-texto">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">unicodedata</span> 
+
+<span class="k">def</span> <span class="nf">normalize_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">nfkd_form</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">nfkd_form</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ASCII&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">normalize_string</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tokeniza&#231;&#227;o-em-Portugu&#234;s">Tokeniza&#231;&#227;o em Portugu&#234;s<a class="anchor-link" href="#Tokeniza&#231;&#227;o-em-Portugu&#234;s">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nltk.data</span>
+<span class="n">portuguese_tokenizer</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;tokenizers/punkt/PY3/portuguese.pickle&#39;</span><span class="p">)</span>
+<span class="n">portuguese_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tokeniza&#231;&#227;o-em-palavras">Tokeniza&#231;&#227;o em palavras<a class="anchor-link" href="#Tokeniza&#231;&#227;o-em-palavras">&#182;</a></h4><p>Para a primeira sentença do texto.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">word_tokenize</span>
+
+<span class="n">first_sentence_word_tokenized</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_sentence_word_tokenized</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tokeniza&#231;&#227;o-com-express&#227;o-regular">Tokeniza&#231;&#227;o com express&#227;o regular<a class="anchor-link" href="#Tokeniza&#231;&#227;o-com-express&#227;o-regular">&#182;</a></h4><p>Para pegar apenas palavras em um texto.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="k">import</span> <span class="n">RegexpTokenizer</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">RegexpTokenizer</span><span class="p">(</span><span class="s2">&quot;[\w&#39;]+&quot;</span><span class="p">)</span>
+
+<span class="n">first_sentence_word_tokenized_without_punctuation</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">sentence_tokenized</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_sentence_word_tokenized_without_punctuation</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Filtrando-stopwords!">Filtrando stopwords!<a class="anchor-link" href="#Filtrando-stopwords!">&#182;</a></h3><p>Stopwords são palavras que geralmente não contribuem para o significado de uma sentença.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
+
+<span class="n">portuguese_stops</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;portuguese&#39;</span><span class="p">))</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">first_sentence_word_tokenized_without_punctuation</span>
+
+<span class="n">words_without_stop</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">portuguese_stops</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">words_without_stop</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Stemming">Stemming<a class="anchor-link" href="#Stemming">&#182;</a></h3><p>Stemming é a técnica que remove os afixos das palavras, deixando apenas seu radical, existe uma versão em Português que é <code>RSLPStemmer</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="k">import</span> <span class="n">RSLPStemmer</span>
+
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">RSLPStemmer</span><span class="p">()</span>
+<span class="n">stem_acidente</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">words_without_stop</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#acidente</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stem_acidente</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11879,6 +12115,8 @@ Para isso, são necessárias ferramentas que permitam análise da linguagem como
 <li>[9]: <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></li>
 <li>[10]: <a href="https://scrapy.org/">https://scrapy.org/</a></li>
 </ul>
+<p>Livro: <a href="https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf">https://github.com/karanmilan/Automatic-Answer-Evaluation/blob/master/Python%203%20Text%20Processing%20with%20NLTK%203%20Cookbook.pdf</a></p>
+<p>WordCloud: <a href="https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb">https://github.com/rafapetter/suspeitando/blob/master/analise/licitacoes.ipynb</a></p>
 
 </div>
 </div>

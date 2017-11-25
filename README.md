@@ -28,11 +28,17 @@
 * [Scikit-learn](http://scikit-learn.org/stable/documentation.html)
 * [Seaborn](https://seaborn.pydata.org/tutorial.html)
 
+### Instalando módulos necessários
+```console
+$ pip install -r requirements.txt
+```
+
 ### Bases de dados
 
 [Em construção]
 
- enade 2014
- http://download.inep.gov.br/microdados/microdados_censo_superior_2014.zip
- http://portal.inep.gov.br/artigo/-/asset_publisher/B4AQV9zFY7Bv/content/id/1336683
+CSTCorpus: http://nilc.icmc.usp.br/CSTNews/login/about
+
+http://download.inep.gov.br/microdados/microdados_censo_superior_2014.zip
+http://portal.inep.gov.br/artigo/-/asset_publisher/B4AQV9zFY7Bv/content/id/1336683
 
