@@ -25,7 +25,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 **Fase 1: fazer rodar de novo**
 
 - [x] Plano de atualização neste README
-- [ ] Decidir o que fazer com as exportações `.html` e `.py` do notebook
+- [x] Remover as exportações `.html` e `.py` geradas a partir do notebook
 - [ ] Projeto com uv e `pyproject.toml`, dependências atuais, sem as não usadas
 - [ ] Tokenizador em português no NLTK atual (`punkt_tab`) e download automático dos recursos
 - [ ] Notebook executado do início ao fim, com as saídas salvas
