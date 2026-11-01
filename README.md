@@ -17,6 +17,41 @@
 * Como análisar usando PLN
 * Resultados até agora
 
+### Como rodar
+
+O projeto usa o [uv](https://docs.astral.sh/uv/), que instala o Python e todas
+as bibliotecas necessárias. Você não precisa ter o Python instalado antes.
+
+1. Instale o uv. No macOS ou Linux, no terminal:
+
+   ```console
+   $ curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+   No Windows, no PowerShell:
+
+   ```console
+   > powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   ```
+
+2. Baixe este repositório e entre na pasta:
+
+   ```console
+   $ git clone https://github.com/anaschwendler/jornalismo-de-dados.git
+   $ cd jornalismo-de-dados
+   ```
+
+3. Instale as bibliotecas e abra o Jupyter:
+
+   ```console
+   $ uv sync
+   $ uv run jupyter lab
+   ```
+
+4. O Jupyter abre no navegador. Entre na pasta `research/`, abra o notebook e
+   rode as células em ordem (Shift+Enter). Na primeira vez, o notebook baixa
+   alguns recursos do NLTK, então é preciso estar conectado à internet.
+
 ### Status
 
 Material criado em 2017 para uma palestra e parado desde então. Em 2026
@@ -67,16 +102,6 @@ começou a ser atualizado, um passo pequeno de cada vez:
 * [Numpy](https://docs.scipy.org/doc/numpy-dev/dev/)
 * [Scikit-learn](http://scikit-learn.org/stable/documentation.html)
 * [Seaborn](https://seaborn.pydata.org/tutorial.html)
-
-### Instalando módulos necessários
-
-O projeto usa o [uv](https://docs.astral.sh/uv/getting-started/installation/)
-para instalar o Python e as bibliotecas. Com o uv instalado:
-
-```console
-$ uv sync
-$ uv run jupyter lab
-```
 
 ### Bases de dados
 
