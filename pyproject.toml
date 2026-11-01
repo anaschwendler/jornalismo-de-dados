@@ -1,0 +1,15 @@
+[project]
+name = "jornalismo-de-dados"
+version = "0.1.0"
+description = "Processamento de Linguagem Natural para jornalismo de dados"
+readme = "README.md"
+authors = [
+    { name = "Ana Schwendler", email = "schwendler@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "jupyterlab>=4.6.5",
+    "nltk>=3.10.4",
+    "pandas>=3.1.0",
+    "seaborn>=0.13.2",
+]
