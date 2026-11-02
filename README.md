@@ -63,7 +63,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Remover as exportações `.html` e `.py` geradas a partir do notebook
 - [x] Projeto com uv e `pyproject.toml`, dependências atuais, sem as não usadas
 - [x] Tokenizador em português no NLTK atual (`punkt_tab`) e download automático dos recursos
-- [ ] Notebook executado do início ao fim, com as saídas salvas
+- [x] Notebook executado do início ao fim, com as saídas salvas
 - [ ] Erros de digitação e título ("Processamento de Linguagem Natural")
 - [ ] Links quebrados ou que mudaram (INEP, Scrapinghub/Zyte, CSTNews)
 
