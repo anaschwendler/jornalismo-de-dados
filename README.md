@@ -69,6 +69,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 
 **Fase 2: terminar o que ficou pela metade**
 
+- [ ] Revisar o texto do notebook (correção ortográfica x stemming, exemplos que faltam, Anaconda)
 - [ ] Dividir em notebooks numerados (`01-introducao`, `02-limpeza`, ...)
 - [ ] Escolher uma base de dados aberta e maior, com script de download
 - [ ] Frequência de palavras com gráfico
