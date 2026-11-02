@@ -11,10 +11,10 @@
 ### Planejamento
 
 * Introdução a PLN (o que é PLN)
-* Por que é importante, como ajuda no dia-a-dia
+* Por que é importante, como ajuda no dia a dia
 * Como criar estudos (jupyter notebook)
-* Scrapping de dados
-* Como análisar usando PLN
+* Raspagem de dados
+* Como analisar usando PLN
 * Resultados até agora
 
 ### Como rodar
@@ -64,7 +64,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Projeto com uv e `pyproject.toml`, dependências atuais, sem as não usadas
 - [x] Tokenizador em português no NLTK atual (`punkt_tab`) e download automático dos recursos
 - [x] Notebook executado do início ao fim, com as saídas salvas
-- [ ] Erros de digitação e título ("Processamento de Linguagem Natural")
+- [x] Erros de digitação e título ("Processamento de Linguagem Natural")
 - [ ] Links quebrados ou que mudaram (INEP, Scrapinghub/Zyte, CSTNews)
 
 **Fase 2: terminar o que ficou pela metade**
