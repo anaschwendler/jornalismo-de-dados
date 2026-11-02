@@ -65,7 +65,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Tokenizador em português no NLTK atual (`punkt_tab`) e download automático dos recursos
 - [x] Notebook executado do início ao fim, com as saídas salvas
 - [x] Erros de digitação e título ("Processamento de Linguagem Natural")
-- [ ] Links quebrados ou que mudaram (INEP, Scrapinghub/Zyte, CSTNews)
+- [x] Links quebrados ou que mudaram (INEP, Scrapinghub/Zyte, CSTNews)
 
 **Fase 2: terminar o que ficou pela metade**
 
@@ -95,21 +95,23 @@ começou a ser atualizado, um passo pequeno de cada vez:
 
 ### Tecnologias
 * [Python](https://www.python.org/)
-* [Anaconda](https://www.anaconda.com/download/)
-* [Jupyter notebook](http://jupyter.org/install.html)
+* [Anaconda](https://www.anaconda.com/download)
+* [Jupyter notebook](https://jupyter.org/install)
 * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 * [Scrapy](https://docs.scrapy.org/en/latest/)
-* [Pandas](http://pandas.pydata.org/pandas-docs/stable/)
-* [Numpy](https://docs.scipy.org/doc/numpy-dev/dev/)
-* [Scikit-learn](http://scikit-learn.org/stable/documentation.html)
+* [Pandas](https://pandas.pydata.org/docs/)
+* [Numpy](https://numpy.org/doc/stable/)
+* [Scikit-learn](https://scikit-learn.org/stable/)
 * [Seaborn](https://seaborn.pydata.org/tutorial.html)
 
 ### Bases de dados
 
 [Em construção]
 
-CSTCorpus: http://nilc.icmc.usp.br/CSTNews/login/about
-
-http://download.inep.gov.br/microdados/microdados_censo_superior_2014.zip
-http://portal.inep.gov.br/artigo/-/asset_publisher/B4AQV9zFY7Bv/content/id/1336683
+* [CSTNews](https://sites2.icmc.usp.br/taspardo/sucinto/cstnews.html): 140
+  notícias em português, agrupadas em 50 assuntos, do NILC (ICMC-USP). É
+  distribuído para uso em pesquisa. O texto de exemplo em `data/sample.txt` é
+  uma dessas notícias.
+* [Microdados do Censo da Educação Superior](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior),
+  do INEP ([arquivo de 2014](https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2014.zip)).
 
