@@ -53,6 +53,11 @@ as bibliotecas necessárias. Você não precisa ter o Python instalado antes.
    (Shift+Enter). Na primeira vez, o `02-primeiros-passos.ipynb` baixa alguns
    recursos do NLTK, então é preciso estar conectado à internet.
 
+O `03-agencia-brasil.ipynb` coleta notícias do site da Agência Brasil na
+primeira vez que roda, o que leva uns 10 minutos. As notícias ficam salvas em
+`data/agencia-brasil.csv`, que não vai para o GitHub. Para coletar notícias
+mais recentes, apague esse arquivo e rode o notebook de novo.
+
 ### Status
 
 Material criado em 2017 para uma palestra e parado desde então. Em 2026
@@ -72,11 +77,11 @@ começou a ser atualizado, um passo pequeno de cada vez:
 
 - [x] Revisar o texto do notebook (correção ortográfica x stemming, exemplos que faltam, Anaconda)
 - [x] Dividir em notebooks numerados (`01-introducao`, `02-primeiros-passos`, ...)
-- [ ] Escolher uma base de dados aberta e maior, com script de download
+- [x] Notícias da Agência Brasil como base aberta e maior (`03-agencia-brasil`)
 - [ ] Frequência de palavras com gráfico
 - [ ] Nuvem de palavras
 - [ ] Lematização com spaCy, comparada ao stemming
-- [ ] Exemplo de raspagem de dados com requests e Beautiful Soup
+- [x] Exemplo de raspagem de dados com requests e Beautiful Soup
 - [ ] Seção "Resultados" preenchida
 
 **Fase 3: PLN em 2026**

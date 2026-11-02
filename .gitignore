@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Notícias coletadas pelo notebook 03
+data/agencia-brasil.csv
