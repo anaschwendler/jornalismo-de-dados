@@ -78,7 +78,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Revisar o texto do notebook (correção ortográfica x stemming, exemplos que faltam, Anaconda)
 - [x] Dividir em notebooks numerados (`01-introducao`, `02-primeiros-passos`, ...)
 - [x] Notícias da Agência Brasil como base aberta e maior (`03-agencia-brasil`)
-- [ ] Frequência de palavras com gráfico
+- [x] Frequência de palavras com gráfico
 - [ ] Nuvem de palavras
 - [ ] Lematização com spaCy, comparada ao stemming
 - [x] Exemplo de raspagem de dados com requests e Beautiful Soup
