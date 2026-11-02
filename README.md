@@ -83,7 +83,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Notícias da Agência Brasil como base aberta e maior (`03-agencia-brasil`)
 - [x] Frequência de palavras com gráfico
 - [x] Nuvem de palavras, como extra (`04-extra-nuvem-de-palavras`)
-- [ ] Lematização com spaCy, comparada ao stemming
+- [x] Lematização com spaCy, comparada ao stemming
 - [x] Exemplo de raspagem de dados com requests e Beautiful Soup
 - [ ] Seção "Resultados" preenchida
 
@@ -110,6 +110,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 * [Scrapy](https://docs.scrapy.org/en/latest/)
 * [Pandas](https://pandas.pydata.org/docs/)
 * [Numpy](https://numpy.org/doc/stable/)
+* [spaCy](https://spacy.io/)
 * [Scikit-learn](https://scikit-learn.org/stable/)
 * [Seaborn](https://seaborn.pydata.org/tutorial.html)
 

@@ -12,7 +12,12 @@ dependencies = [
     "jupyterlab>=4.6.5",
     "nltk>=3.10.4",
     "pandas>=3.1.0",
+    "pt-core-news-sm",
     "requests>=2.34.2",
     "seaborn>=0.13.2",
+    "spacy>=3.8.18",
     "wordcloud>=1.9.6",
 ]
+
+[tool.uv.sources]
+pt-core-news-sm = { url = "https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.8.0/pt_core_news_sm-3.8.0-py3-none-any.whl" }
