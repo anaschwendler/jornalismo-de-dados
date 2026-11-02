@@ -48,9 +48,10 @@ as bibliotecas necessárias. Você não precisa ter o Python instalado antes.
    $ uv run jupyter lab
    ```
 
-4. O Jupyter abre no navegador. Entre na pasta `research/`, abra o notebook e
-   rode as células em ordem (Shift+Enter). Na primeira vez, o notebook baixa
-   alguns recursos do NLTK, então é preciso estar conectado à internet.
+4. O Jupyter abre no navegador. Entre na pasta `research/` e abra os notebooks
+   em ordem, começando pelo `01-introducao.ipynb`. Rode as células em ordem
+   (Shift+Enter). Na primeira vez, o `02-primeiros-passos.ipynb` baixa alguns
+   recursos do NLTK, então é preciso estar conectado à internet.
 
 ### Status
 
@@ -70,7 +71,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 **Fase 2: terminar o que ficou pela metade**
 
 - [x] Revisar o texto do notebook (correção ortográfica x stemming, exemplos que faltam, Anaconda)
-- [ ] Dividir em notebooks numerados (`01-introducao`, `02-limpeza`, ...)
+- [x] Dividir em notebooks numerados (`01-introducao`, `02-primeiros-passos`, ...)
 - [ ] Escolher uma base de dados aberta e maior, com script de download
 - [ ] Frequência de palavras com gráfico
 - [ ] Nuvem de palavras
