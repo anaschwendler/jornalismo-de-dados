@@ -14,4 +14,5 @@ dependencies = [
     "pandas>=3.1.0",
     "requests>=2.34.2",
     "seaborn>=0.13.2",
+    "wordcloud>=1.9.6",
 ]

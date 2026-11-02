@@ -58,6 +58,9 @@ primeira vez que roda, o que leva uns 10 minutos. As notícias ficam salvas em
 `data/agencia-brasil.csv`, que não vai para o GitHub. Para coletar notícias
 mais recentes, apague esse arquivo e rode o notebook de novo.
 
+Os notebooks com `extra` no nome são opcionais. O `04-extra-nuvem-de-palavras.ipynb`
+usa as notícias do 03 e, se elas ainda não foram coletadas, roda o 03 antes.
+
 ### Status
 
 Material criado em 2017 para uma palestra e parado desde então. Em 2026
@@ -79,7 +82,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Dividir em notebooks numerados (`01-introducao`, `02-primeiros-passos`, ...)
 - [x] Notícias da Agência Brasil como base aberta e maior (`03-agencia-brasil`)
 - [x] Frequência de palavras com gráfico
-- [ ] Nuvem de palavras
+- [x] Nuvem de palavras, como extra (`04-extra-nuvem-de-palavras`)
 - [ ] Lematização com spaCy, comparada ao stemming
 - [x] Exemplo de raspagem de dados com requests e Beautiful Soup
 - [ ] Seção "Resultados" preenchida
