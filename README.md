@@ -85,7 +85,6 @@ começou a ser atualizado, um passo pequeno de cada vez:
 - [x] Nuvem de palavras, como extra (`04-extra-nuvem-de-palavras`)
 - [x] Lematização com spaCy, comparada ao stemming
 - [x] Exemplo de raspagem de dados com requests e Beautiful Soup
-- [ ] Seção "Resultados" preenchida
 
 **Fase 3: PLN em 2026**
 
