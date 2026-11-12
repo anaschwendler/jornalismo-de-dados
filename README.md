@@ -60,6 +60,8 @@ mais recentes, apague esse arquivo e rode o notebook de novo.
 
 Os notebooks com `extra` no nome são opcionais. O `04-extra-nuvem-de-palavras.ipynb`
 usa as notícias do 03 e, se elas ainda não foram coletadas, roda o 03 antes.
+Os notebooks seguintes, a partir do `05-entidades.ipynb`, também usam essas notícias
+e fazem o mesmo.
 
 ### Status
 
@@ -88,7 +90,7 @@ começou a ser atualizado, um passo pequeno de cada vez:
 
 **Fase 3: PLN em 2026**
 
-- [ ] Reconhecimento de entidades (pessoas, órgãos, lugares)
+- [x] Reconhecimento de entidades (pessoas, órgãos, lugares) (`05-entidades`)
 - [ ] Embeddings e busca por similaridade
 - [ ] Classificação de textos (TF-IDF e scikit-learn)
 - [ ] LLMs para extrair e resumir, com verificação dos resultados
